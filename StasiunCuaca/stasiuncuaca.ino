@@ -38,25 +38,25 @@ Adafruit_BMP280 bmp;
 Adafruit_TSL2561_Unified tsl = Adafruit_TSL2561_Unified(TSL2561_ADDR_FLOAT, 12345);
 
 // Inisialisasi LED
-const int ledPin = 5; // Pin LED
+const int ledPin = 5;
 
 // Variabel untuk timing
 unsigned long previousMillis = 0;
-const long interval = 1000; // Interval 1 detik
+const long interval = 1000; 
 
 // Variabel sensor
 float suhu;
 float kelembapan;
-uint16_t lux;  // Variabel untuk menyimpan nilai lux dari TSL2561
+uint16_t lux; 
 
 // Variabel untuk status WiFi
 bool wifiConnected = false;
 
 // Variabel untuk kondisi cuaca sebelumnya
 String previousKondisiCuaca = "";
-String previousWaktuStr = ""; // Untuk membandingkan waktu sebelumnya
+String previousWaktuStr = ""; 
 
-// Daftar hari dalam seminggu
+// Daftar hari
 const char* daysOfTheWeek[] = {"Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"};
 
 // Fungsi interrupt untuk anemometer

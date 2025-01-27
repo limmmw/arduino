@@ -8,7 +8,7 @@ int kalibrasi; // variabel tipe data integer
 
 void setup() {
   attachInterrupt(0, rpm_fun, RISING); // mengambil sinyal high pada pin 2
-  half_revolutions = 0; // memberikan nilai 0 pada variabel
+  half_revolutions = 0; 
   rpmku = 0;
   timeold = 0;
   kalibrasi = 0;
@@ -36,5 +36,5 @@ void loop() {
 }
 
 void rpm_fun() {
-  half_revolutions++; // counter interrupt
+  half_revolutions++;
 }
