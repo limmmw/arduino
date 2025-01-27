@@ -1,4 +1,4 @@
-#include <Wire.h>  // Library I2C tidak diperlukan karena kita tidak menggunakan LCD
+#include <Wire.h> 
 
 volatile byte half_revolutions; // variabel tipe data byte
 unsigned int rpmku; // variabel tipe data integer
