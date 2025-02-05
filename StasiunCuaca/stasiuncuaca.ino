@@ -189,11 +189,11 @@ void loop() {
     Serial.println("Sending data: " + sensorData);
 
     // Kirim data sensor ke Serial1 (untuk ESP8266)
-    Serial1.print("AT+CIPSEND="); // Menyatakan panjang data yang akan dikirim
-    Serial1.println(sensorData.length() + 2); // Menambahkan 2 untuk CR+LF
+    Serial1.print("AT+CIPSEND="); 
+    Serial1.println(sensorData.length() + 2); 
     delay(100); // Tunggu
-    Serial1.print(sensorData); // Kirim data sensor
-    Serial1.print("\r\n"); // Akhiri dengan CR+LF
+    Serial1.print(sensorData); 
+    Serial1.print("\r\n"); 
 
     // Cek jika kondisi cuaca berubah, bunyikan buzzer
     if (kondisiCuaca != previousKondisiCuaca) {
@@ -204,13 +204,13 @@ void loop() {
       
       // Update tampilan LCD
       lcd.clear();
-      lcd.setCursor((16 - kondisiCuaca.length()) / 2, 0); // Posisi tengah pada baris pertama
+      lcd.setCursor((16 - kondisiCuaca.length()) / 2, 0); 
       lcd.print(kondisiCuaca);
-      lcd.setCursor((16 - waktuStr.length()) / 2, 1); // Posisi tengah pada baris kedua
+      lcd.setCursor((16 - waktuStr.length()) / 2, 1); 
       lcd.print(waktuStr);
     } else if (waktuStr != previousWaktuStr) {
       // Update waktu pada LCD jika hanya waktu yang berubah
-      lcd.setCursor((16 - waktuStr.length()) / 2, 1); // Posisi tengah pada baris kedua
+      lcd.setCursor((16 - waktuStr.length()) / 2, 1); 
       lcd.print(waktuStr);
 
       previousWaktuStr = waktuStr;
