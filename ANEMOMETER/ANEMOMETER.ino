@@ -1,13 +1,13 @@
 #include <Wire.h> 
 
-volatile byte half_revolutions; // variabel tipe data byte
-unsigned int rpmku; // variabel tipe data integer
-unsigned long timeold; // variabel tipe data long
+volatile byte half_revolutions; 
+unsigned int rpmku; 
+unsigned long timeold; 
 
-int kalibrasi; // variabel tipe data integer
+int kalibrasi; 
 
 void setup() {
-  attachInterrupt(0, rpm_fun, RISING); // mengambil sinyal high pada pin 2
+  attachInterrupt(0, rpm_fun, RISING); 
   half_revolutions = 0; 
   rpmku = 0;
   timeold = 0;
@@ -18,11 +18,11 @@ void setup() {
 }
 
 void loop() {
-  rpmku = 30 * 1000 / (millis() - timeold) * half_revolutions; // menghitung rpm
-  timeold = millis(); // hasil counter dimasukkan ke variabel timeold
-  half_revolutions = 0; // reset variabel
+  rpmku = 30 * 1000 / (millis() - timeold) * half_revolutions; 
+  timeold = millis(); 
+  half_revolutions = 0; 
 
-  kalibrasi = (rpmku - 150) / 109;  // rumus kalibrasi
+  kalibrasi = (rpmku - 150) / 109;
   
   if ((kalibrasi > 590) && (kalibrasi < 605)) {
     kalibrasi = 0;
