@@ -17,6 +17,7 @@ void setup() {
   Serial.println("Setup complete. Waiting for wind speed data...");
 }
 
+//kalibrasi Sensor
 void loop() {
   rpmku = 30 * 1000 / (millis() - timeold) * half_revolutions; 
   timeold = millis(); 
