@@ -15,7 +15,9 @@ This repository is dedicated to programs and projects written in C++ for Arduino
 This project is licensed under the MIT License.
 
 Feel free to modify, distribute, or contribute.
+
 ---
+
 Built with 💻 by Limmmw
 
 github.com/limmmw
